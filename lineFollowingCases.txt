@@ -1,0 +1,44 @@
+Cases:
+1.) if : L == ON  ; R == ON
+	then : LD == Stop ; RD == Stop ; 
+		if : searchLeft == true 
+			then : seekLeft
+		else if : searchRight == true
+			then : seekRight
+		else:
+			count that line and continue (lineCount++)
+
+2.) if : L == OFF  ; R == ON
+	then : LD == Forward ; RD == Backward
+
+3.) if : L == ON ; R == OFF
+	then : LD == Backward ; RD == Forward
+
+4.) if : L == OFF ; R == OFF
+	then : LD == Forward ; RD == Forward
+
+searchLeft == boolean
+
+searchRight == boolean
+
+lineCount == integer
+
+seekLeft : 
+	Turn left until a line is found, and then let the left sensor
+	pass over the line and let the right sensor
+ 	find it, then drive forward as usual
+
+seekRight:
+	Turn right until a line is found, and then let the right sensor
+	pass over that line and let the left sensor find it, then
+	drive forward as usual
+
+turn: 
+	Turns left based on given speed
+
+drive:
+	Drives based on given speed
+
+
+
+	
